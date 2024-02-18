@@ -1,10 +1,14 @@
 import './App.scss';
+import BudgetApp from './components/BudgetApp';
 
+// app component
 function App() {
   return (
     <>
-      <h1>Budget App</h1>
-      <h2><i className="bi bi-airplane-engines"></i></h2>
+     <div className='app'>
+        <h1>Budget App</h1>
+        <BudgetApp />
+      </div>
     </>
   )
 }
