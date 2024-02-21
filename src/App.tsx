@@ -1,5 +1,5 @@
 import './App.scss';
-import BudgetApp from './components/BudgetApp';
+import BudgetApp from './containers/BudgetApp';
 
 // app component
 function App() {
