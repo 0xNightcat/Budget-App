@@ -1,7 +1,10 @@
 .balance {
-   margin-top: 5rem;
+   margin-top: 6.5rem;
 }
 
 .calc-result {
    margin-top: 5rem;
+   .calc-bottom {
+      justify-content: space-evenly !important;
+   }
 }
