@@ -1,0 +1,19 @@
+.alert-item {
+   display: flex;
+   align-items: center;
+   .alert {
+      padding: 10px 15px;
+      width: 100%;
+      .content {
+         display: flex;
+         justify-content: space-between;
+         span {
+            color: #016101;
+         }
+      }
+   }
+   i {
+      font-size: 18px;
+      margin-left: 5px;
+   }
+}

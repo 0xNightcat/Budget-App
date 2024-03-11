@@ -23,7 +23,7 @@ function BudgetApp() {
                               <Income />
                            </div>
                         </Col>
-                        <Col md={4}>df</Col>
+                        <Col md={4}>test</Col>
                      </Row>
                   </Container>
                </Card.Body>

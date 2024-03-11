@@ -1,5 +1,6 @@
 import './Income.scss';
 import { Form, FloatingLabel, Button } from 'react-bootstrap';
+import IncomeTransaction from './IncomeTransaction/IncomeTransaction';
 
 function Income() {
    return (
@@ -18,8 +19,14 @@ function Income() {
                   <Form.Control type='number' placeholder='250000' />
                </FloatingLabel>     
 
-               <Button variant='success' type='submit'>Submit</Button>
+               <Button className='px-4' variant='success' type='submit'>Submit</Button>
             </Form>
+
+            <div className='income-trans'>
+               <h4 className='tit text-start mb-3'>Transaction History</h4>
+
+               <IncomeTransaction />
+            </div>
          </div>
       </>
    )
