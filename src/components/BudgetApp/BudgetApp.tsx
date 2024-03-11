@@ -2,6 +2,7 @@ import './BudgetApp.scss';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import Calculate from './Calculate/Calculate';
 import Income from './Income/Income';
+import Expense from './Expense/Expense';
 
 // budget component
 function BudgetApp() {
@@ -23,7 +24,9 @@ function BudgetApp() {
                               <Income />
                            </div>
                         </Col>
-                        <Col md={4}>test</Col>
+                        <Col md={4}>
+                           <Expense />
+                        </Col>
                      </Row>
                   </Container>
                </Card.Body>
