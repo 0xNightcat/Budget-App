@@ -1,10 +1,27 @@
-.balance {
-   margin-top: 6.5rem;
-}
-
-.calc-result {
-   margin-top: 5rem;
-   .calc-bottom {
-      justify-content: space-evenly !important;
+.calculate {
+   .amount {
+      font-size: 24px;
+   }
+   .balance {
+      margin-top: 9rem;
+      .title {
+         font-size: 36px;
+      }
+   }
+   .calc-result {
+      margin-top: 7rem;
+      .calc-bottom {
+         justify-content: space-evenly !important;
+         .income-calc {
+            .title, .amount {
+               color: #006600;
+            }
+         }
+         .expenses-calc {
+            .title, .amount {
+               color: #9c0000;
+            }
+         }
+      }
    }
 }

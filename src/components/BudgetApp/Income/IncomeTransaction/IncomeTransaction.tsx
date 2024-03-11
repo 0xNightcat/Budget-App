@@ -1,6 +1,7 @@
 import './IncomeTransaction.scss';
 import { Alert } from 'react-bootstrap';
 
+// IncomeTransaction component
 function IncomeTransaction() {
    return (
       <>

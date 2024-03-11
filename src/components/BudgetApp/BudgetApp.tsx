@@ -15,7 +15,7 @@ function BudgetApp() {
                      <Row>
                         <Col md={4}>
                            <div className='calculate-side'>
-                              <h2 className='title m-0'>BUDGET APP</h2>
+                              <h2 className='main-title m-0'>BUDGET APP</h2>
                               <Calculate />
                            </div>
                         </Col>

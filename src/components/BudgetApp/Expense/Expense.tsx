@@ -2,6 +2,7 @@ import './Expense.scss';
 import { Form, FloatingLabel, Button } from 'react-bootstrap';
 import ExpenseTransaction from './ExpenseTransaction/ExpenseTransaction';
 
+// expense component
 function Expense() {
    return (
       <>
