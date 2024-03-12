@@ -1,8 +1,11 @@
 import './Income.scss';
 import { Form, FloatingLabel, Button } from 'react-bootstrap';
 import IncomeTransaction from './IncomeTransaction/IncomeTransaction';
+import { useBudgetContext } from '../../../context/BudgetContext';
 
 function Income() {
+   const { incomeInfo } = useBudgetContext();
+
    return (
       <>
          <div className='income'>
@@ -19,7 +22,7 @@ function Income() {
                   <Form.Control type='number' placeholder='250000' />
                </FloatingLabel>     
 
-               <Button className='px-4' variant='success' type='submit'>Submit</Button>
+               <Button className='px-4' variant='success' type='button' onClick={() => incomeInfo('test', 2222)}>Submit</Button>
             </Form>
 
             <div className='income-trans'>
