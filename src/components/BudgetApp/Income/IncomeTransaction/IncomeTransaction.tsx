@@ -4,17 +4,17 @@ import { useBudgetContext } from '../../../../context/BudgetContext';
 
 // IncomeTransaction component
 function IncomeTransaction() {
-   const { incomeItems } = useBudgetContext();
+   const { budgetItems } = useBudgetContext();
 
    return (
       <>
-         {incomeItems.map(item => {
+         {budgetItems.map(item => {
             return (
-               <div key={item.income} className='income-alert-item mt-2'>
+               <div key={item.title} className='income-alert-item mt-2'>
                   <Alert variant='success' className='mb-0'>
                      <div className='content'>
-                        <span className='title'>{item.income}</span>
-                        <span className='amount'>{item.price}</span>
+                        <span className='title'>{item.title}</span>
+                        <span className='amount'>{item.amount}</span>
                      </div>
                   </Alert>
                   <a href='#'>

@@ -20,7 +20,7 @@ function Expense() {
                   <Form.Control type='number' placeholder='250000' />
                </FloatingLabel>     
 
-               <Button className='px-4' variant='danger' type='submit'>Submit</Button>
+               <Button className='px-4' variant='danger' type='button'>Submit</Button>
             </Form>
 
             <div className='expense-trans'>

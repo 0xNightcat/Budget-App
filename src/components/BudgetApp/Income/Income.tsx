@@ -9,7 +9,7 @@ function Income() {
    let [inputValue, setinputValue] = useState<string>('');
    let [numValue, setnumValue] = useState<number>(0);
 
-   const { incomeInfo, incomeItems } = useBudgetContext();
+   const { budgetItemInfo, budgetItems } = useBudgetContext();
 
    function getTextValue(val: string) {
       setinputValue(val);
@@ -20,14 +20,16 @@ function Income() {
    }
 
    useEffect(() => {
-      console.log(incomeItems);
+      console.log(budgetItems);
+      setinputValue('');
+      setnumValue(0);
       {document.querySelector('form')?.reset()};
-   }, [incomeInfo, incomeItems])
+   }, [budgetItemInfo, budgetItems])
 
    return (
       <>
          <div className='income'>
-            <Form>
+            <Form className='inc-frm'>
                <FloatingLabel 
                   controlId='floatingInput' 
                   label='Add Income'
@@ -40,7 +42,7 @@ function Income() {
                   <Form.Control type='number' onChange={(e) => getNumValue(e.target.value)} placeholder='250000' />
                </FloatingLabel>     
 
-               <Button className='px-4' variant='success' type='submit' onClick={() => incomeInfo(inputValue, numValue)}>Submit</Button>
+               <Button className='px-4' variant='success' type='button' onClick={() => inputValue && numValue ? budgetItemInfo(inputValue, numValue, 'income') : null}>Submit</Button>
             </Form>
 
             <div className='income-trans'>
