@@ -1,7 +1,10 @@
 import './Calculate.scss';
+import { useBudgetContext } from '../../../context/BudgetContext';
 
 // calculate component
 function Calculate() {
+   const { incomeAmount } = useBudgetContext();
+
    return (
       <>
       <div className='calculate'>
@@ -13,7 +16,7 @@ function Calculate() {
             <div className='calc-bottom d-flex flex-row justify-content-center'>
                <div className='income-calc'>
                   <h2 className='title'>Income</h2>
-                  <p className='amount mt-3'>+$150000</p>
+                  <p className='amount mt-3'>+${incomeAmount()}</p>
                </div>
                <div className='expenses-calc'>
                   <h2 className='title'>Expenses</h2>
