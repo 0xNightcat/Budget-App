@@ -23,7 +23,9 @@ function Income() {
       console.log(budgetItems);
       setinputValue('');
       setnumValue(0);
-      {document.querySelector('form')?.reset()};
+      {const formElement = document.querySelector('.inc-frm') as HTMLFormElement;
+         formElement.reset();
+      };
    }, [budgetItemInfo, budgetItems])
 
    return (

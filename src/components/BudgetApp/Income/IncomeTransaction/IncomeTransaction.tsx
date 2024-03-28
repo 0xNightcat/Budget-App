@@ -5,10 +5,11 @@ import { useBudgetContext } from '../../../../context/BudgetContext';
 // IncomeTransaction component
 function IncomeTransaction() {
    const { budgetItems } = useBudgetContext();
+   const incomeItems = budgetItems.filter(item => item.type === 'income');
 
    return (
       <>
-         {budgetItems.map(item => {
+         {incomeItems.map(item => {
             return (
                <div key={item.title} className='income-alert-item mt-2'>
                   <Alert variant='success' className='mb-0'>

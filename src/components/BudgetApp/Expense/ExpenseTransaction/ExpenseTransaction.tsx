@@ -1,21 +1,29 @@
 import './ExpenseTransaction.scss';
 import { Alert } from 'react-bootstrap';
+import { useBudgetContext } from '../../../../context/BudgetContext';
 
 // ExpenseTransaction component
 function ExpenseTransaction() {
+   const { budgetItems } = useBudgetContext();
+   const expenseItems = budgetItems.filter(item => item.type === 'expense');
+
    return (
       <>
-         <div className='expense-alert-item'>
-            <Alert variant='danger' className='mb-0'>
-               <div className='content'>
-                  <span className='title'>Rent</span>
-                  <span className='amount'>$5000</span>
+         {expenseItems.map(item => {
+            return (
+               <div key={item.title} className='expense-alert-item mt-2'>
+                  <Alert variant='danger' className='mb-0'>
+                     <div className='content'>
+                        <span className='title'>{item.title}</span>
+                        <span className='amount'>{item.amount}</span>
+                     </div>
+                  </Alert>
+                  <a href='#'>
+                     <i className="bi bi-trash3-fill text-danger"></i>
+                  </a>
                </div>
-            </Alert>
-            <a href='#'>
-               <i className="bi bi-trash3-fill text-danger"></i>
-            </a>
-         </div>
+            )
+         })}
       </>
    )
 }

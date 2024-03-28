@@ -15,7 +15,8 @@ type BudgetContextTypes = {
    budgetItemInfo: (income: string, amount: number, type: string) => void,
    budgetItems: BudgetItem[],
    incomeAmount: () => number,
-   // expenseAmount: () => number
+   expenseAmount: () => number,
+   balanceAmount: () => number
 }
 
 // craete context
@@ -51,11 +52,34 @@ export function BudgetContextProvider({ children }: ContextProviderType) {
 
       return incomeSum;
    }
+
+   // income amount function
+   const expenseAmount = () => {
+      let expenseSum = 0;
+      const expenseItems =  budgetItems.filter(item => item.type === 'expense');
+      expenseItems.forEach(item => {
+         expenseSum += Number(item.amount);
+      })
+
+      return expenseSum;
+   }
+
+   // balance amount function
+   const balanceAmount = () => {
+      let balance = 0;
+
+      balance = incomeAmount() - expenseAmount();
+
+      return balance;
+   }
+
    
    
    return <BudgetContext.Provider value={{
       budgetItemInfo,
       budgetItems,
       incomeAmount,
+      expenseAmount,
+      balanceAmount
    }}>{children}</BudgetContext.Provider>
 }
