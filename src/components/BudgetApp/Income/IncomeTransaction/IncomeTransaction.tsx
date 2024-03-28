@@ -4,7 +4,7 @@ import { useBudgetContext } from '../../../../context/BudgetContext';
 
 // IncomeTransaction component
 function IncomeTransaction() {
-   const { budgetItems } = useBudgetContext();
+   const { budgetItems, removeItem } = useBudgetContext();
    const incomeItems = budgetItems.filter(item => item.type === 'income');
 
    return (
@@ -18,7 +18,7 @@ function IncomeTransaction() {
                         <span className='amount'>{item.amount}</span>
                      </div>
                   </Alert>
-                  <a href='#'>
+                  <a href='#' onClick={() => removeItem(item.title)}>
                      <i className="bi bi-trash3-fill text-danger"></i>
                   </a>
                </div>

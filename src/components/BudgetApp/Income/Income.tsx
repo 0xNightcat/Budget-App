@@ -20,7 +20,6 @@ function Income() {
    }
 
    useEffect(() => {
-      console.log(budgetItems);
       setinputValue('');
       setnumValue(0);
       {const formElement = document.querySelector('.inc-frm') as HTMLFormElement;

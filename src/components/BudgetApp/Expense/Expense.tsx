@@ -20,7 +20,6 @@ function Expense() {
    }
 
    useEffect(() => {
-      console.log(budgetItems);
       setinputValue('');
       setnumValue(0);
       {const formElement2 = document.querySelector('.expe-frm') as HTMLFormElement;

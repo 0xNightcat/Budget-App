@@ -4,7 +4,7 @@ import { useBudgetContext } from '../../../../context/BudgetContext';
 
 // ExpenseTransaction component
 function ExpenseTransaction() {
-   const { budgetItems } = useBudgetContext();
+   const { budgetItems, removeItem } = useBudgetContext();
    const expenseItems = budgetItems.filter(item => item.type === 'expense');
 
    return (
@@ -18,7 +18,7 @@ function ExpenseTransaction() {
                         <span className='amount'>{item.amount}</span>
                      </div>
                   </Alert>
-                  <a href='#'>
+                  <a href='#' onClick={() => removeItem(item.title)}>
                      <i className="bi bi-trash3-fill text-danger"></i>
                   </a>
                </div>

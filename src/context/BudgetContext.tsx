@@ -16,7 +16,8 @@ type BudgetContextTypes = {
    budgetItems: BudgetItem[],
    incomeAmount: () => number,
    expenseAmount: () => number,
-   balanceAmount: () => number
+   balanceAmount: () => number,
+   removeItem: (title: string) => void
 }
 
 // craete context
@@ -73,6 +74,11 @@ export function BudgetContextProvider({ children }: ContextProviderType) {
       return balance;
    }
 
+   // remove item
+   const removeItem = (title: string) => {
+      const newBudgetItems = budgetItems.filter(item => item.title !== title);
+      setBudgetItems([...newBudgetItems]);
+   }
    
    
    return <BudgetContext.Provider value={{
@@ -80,6 +86,7 @@ export function BudgetContextProvider({ children }: ContextProviderType) {
       budgetItems,
       incomeAmount,
       expenseAmount,
-      balanceAmount
+      balanceAmount,
+      removeItem
    }}>{children}</BudgetContext.Provider>
 }
