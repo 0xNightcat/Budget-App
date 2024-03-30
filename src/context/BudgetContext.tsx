@@ -1,4 +1,5 @@
-import { createContext, useContext, ReactNode, useState } from 'react';
+import { createContext, useContext, ReactNode } from 'react';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 type ContextProviderType = {
    children: ReactNode
@@ -30,7 +31,8 @@ export function useBudgetContext() {
 
 // context provider
 export function BudgetContextProvider({ children }: ContextProviderType) {
-   const [budgetItems, setBudgetItems] = useState<BudgetItem[]>([]);
+   const [budgetItems, setBudgetItems] = useLocalStorage<BudgetItem[]>(
+      'Budget', []);
 
    // budget items function
    const budgetItemInfo = (budgetItem: string, amount: number, type: string) => {
