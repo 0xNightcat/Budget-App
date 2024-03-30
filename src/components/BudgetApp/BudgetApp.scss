@@ -1,9 +1,14 @@
 .budget {
    margin: 3rem auto auto;
    .card {
-      box-shadow: 5px 16px 15px rgb(128 128 128 / 18%);
       padding: 35px 0;
       min-height: 720px;
+      background-color: #000000a2;
+      color: #fff;
+      input {
+         background-color: transparent;
+         color: #fff;
+      }
       .container {
          .calculate-side {
             .main-title {
